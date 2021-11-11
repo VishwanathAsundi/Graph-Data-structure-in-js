@@ -17,6 +17,11 @@ class Graph {
     }
   }
   DFS(s) {
+    // In the case of disconnected graph call the util function from each node
+    // for(let i=0;i<this.v;i++){
+    //     this.DFSUtil(i, this.visited);
+    // }
+
     this.DFSUtil(s, this.visited);
   }
 }
