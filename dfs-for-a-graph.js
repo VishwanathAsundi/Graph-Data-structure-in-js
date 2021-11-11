@@ -1,3 +1,5 @@
+// Time complexity is O(V+E) V is Vertices, E id Edges
+// Space Complexity is O(V)
 class Graph {
   constructor(v) {
     this.v = v;
