@@ -13,20 +13,20 @@ class Graph{
 
         let children=this.adj[node];
         for(let i=0;i<children.length;i++){
-            if(!this.visited[children[i]]){
+            if(this.visited[children[i]]==false){
                 if(this.isCyclicUtil(children[i],node)){
                 return true;
-            }else if(children[i]!=parent){
-                return true;
-            }
+                }else if(children[i]!=parent){
+                    return true;
+                }
             }
         }
         return false;
     }
     isCyclic(){
-        for(let i=0;i<this.v;i++){
+        for(let u=0;u<this.v;u++){
             if(!this.visited[i]){
-                if(this.isCyclicUtil(i,-1)){
+                if(this.isCyclicUtil(u,-1)){
                 return true;
             }
             }
@@ -44,12 +44,10 @@ g1.addEdge(0, 3);
 g1.addEdge(3, 4);
 
 
-  
 if(g1.isCyclic())
     document.write("Graph contains cycle");
 else
-    document.write("<br/>Graph doesn't "
-                   + "contain cycle");
+    document.write("<br/>Graph doesn't "+ "contain cycle");
 
 const g2=new Graph(3);
 g2.addEdge(0, 1);
