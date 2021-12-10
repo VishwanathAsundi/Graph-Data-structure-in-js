@@ -9,7 +9,7 @@ function isCycleUtil(v, visited, recurStack, adj) {
             if (isCycleUtil(adj[v][i], visited, recurStack, adj)) {
                 return true;
             }
-        } else if (visited[adj[v][i]] == recurStack[adj[v][i]]) {
+        } else if (visited[adj[v][i]] == true && recurStack[adj[v][i]] == true) {
             return true;
         }
     }
@@ -37,6 +37,7 @@ function isCycle(arr, n) {
 }
 
 let arr = [2, -1, 1, 2, 2];
+// arr = [1, 2]
 let n = arr.length;
 if (isCycle(arr, n))
     document.write("Yes, There exists a loop in the given array" + "<br>");
