@@ -19,15 +19,22 @@ function solveMazeUtil(maze, sol, x, y, N) {
 
     if (isSafe(x, y, maze, N)) {
         sol[x][y] = 1;
+
+        // move forward
         if (solveMazeUtil(maze, sol, x, y + 1, N)) {
             return true;
         }
+        //move down
         if (solveMazeUtil(maze, sol, x + 1, y, N)) {
             return true;
         }
+
+        // still didn't reach the destination undo the forward step
         if (solveMazeUtil(maze, sol, x, y - 1, N)) {
             return true;
         }
+
+        // still didn't reach the destination undo the down step
         if (solveMazeUtil(maze, sol, x - 1, y, N)) {
             return true;
         }
