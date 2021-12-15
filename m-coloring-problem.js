@@ -1,3 +1,4 @@
+ // Naive approach
  // Time complexity is O(m^V)
  // Since there are m colors need to be filled with V vertices that leads m^V combinations
  // Space is O(V) for storing the result and for the recursive stack
