@@ -1,7 +1,7 @@
-class Node {
+class node {
     constructor() {
         this.color = 1;
-        this.edges = [];
+        this.edges = new Set();
     }
 }
 var n = 4;
@@ -71,13 +71,17 @@ var graph = [
 
 // Number of colors      
 var m = 3;
-let nodes = new Array(n + 1).fill().map(() => new Node());
-console.log(nodes);
+var nodes = [];
+for (var i = 0; i < n + 1; i++) {
+    nodes.push(new node());
+}
 
-for (let i = 0; i < n; i++) {
-    for (let j = 0; j < n; j++) {
-        if (graph[i][j]) {
-            // undirected graph
+// Push edges to each node as per given input
+for (var i = 0; i < n; i++) {
+    for (var j = 0; j < n; j++) {
+        if (graph[i, j] > 0) {
+
+            // Connect the undirected graph
             nodes[i].edges.push(i);
             nodes[j].edges.push(j);
         }
